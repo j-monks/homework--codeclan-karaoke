@@ -19,8 +19,8 @@ class TestRoom < MiniTest::Test
         @room1 = Room.new(12.50, 5)
 
 
-        @people = [@guest1, @guest2]
-        @playlist = [@song1, @song2]
+        # @people = [@guest1, @guest2]
+        # @playlist = [@song1, @song2]
     end
 
     def test_room_has_fee()
@@ -29,6 +29,14 @@ class TestRoom < MiniTest::Test
 
     def test_room_has_capacity()
         assert_equal(5, @room1.capacity)
+    end
+    
+    def test_room_has_people()
+        assert_equal(0, @room1.people.length)
+    end
+
+    def test_add_guest_to_room()
+        
     end
 
     def test_room_can_check_guest_in
