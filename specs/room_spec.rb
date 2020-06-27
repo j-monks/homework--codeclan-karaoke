@@ -80,4 +80,8 @@ class TestRoom < MiniTest::Test
         assert_equal(0, @room1.people.length)
     end
 
+    def test_guest_cheers_if_favourite_song_is_in_room()
+        @room1.add_song_to_room(@song1)
+        assert_equal("Whoo!", @room1.check_in_guest(@guest1))
+    end
 end
