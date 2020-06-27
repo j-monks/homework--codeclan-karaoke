@@ -18,4 +18,8 @@ class Guest
         end
     end
 
+    def pay_room_fee(room)
+        @wallet -= room.fee
+    end
+
 end
