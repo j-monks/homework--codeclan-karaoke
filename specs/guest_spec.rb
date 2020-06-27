@@ -30,22 +30,22 @@ class TestGuest < MiniTest::Test
     end
 
     def test_sufficient_funds__true_if_enough
-        assert_equal(true, @guest1.sufficient_funds?(@room1))
+        assert_equal(true, @guest1.sufficient_funds?(12.50))
     end
 
     def test_sufficient_funds__false_if_not_enough
         poor_guest = Guest.new("Kayley", 10, @song1)
-        assert_equal(false, poor_guest.sufficient_funds?(@room1))
+        assert_equal(false, poor_guest.sufficient_funds?(12.50))
     end
 
     def test_guest_can_pay_room_fee__decreases_money
-        @guest1.pay_room_fee(@room1)
+        @guest1.pay_room_fee(12.50)
         assert_equal(17.50, @guest1.wallet)
     end
 
     def test_guest_cannot_pay_room_fee_if_insufficient_funds
         poor_guest = Guest.new("Kayley", 10, @song1)
-        poor_guest.pay_room_fee(@room1)
+        poor_guest.pay_room_fee(12.50)
         assert_equal(10, poor_guest.wallet)
     end
 

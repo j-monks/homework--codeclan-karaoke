@@ -35,7 +35,7 @@ class TestRoom < MiniTest::Test
         assert_equal(0, @room1.people.length)
     end
 
-    def test_add_guest_to_room()
+    def test_add_guest_to_room_if_sufficient_funds
         @room1.add_guest_to_room(@guest1)
         assert_equal(1, @room1.people.length)
     end

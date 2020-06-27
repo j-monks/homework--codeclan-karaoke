@@ -10,16 +10,16 @@ class Guest
         @favourite_song = favourite_song    
     end
 
-    def sufficient_funds?(room)
-        if @wallet > room.fee
+    def sufficient_funds?(fee)
+        if @wallet > fee
             return true
         else
             return false
         end
     end
 
-    def pay_room_fee(room)
-        @wallet -= room.fee if sufficient_funds?(room)
+    def pay_room_fee(fee)
+        @wallet -= fee if sufficient_funds?(fee)
     end
 
 end
