@@ -23,12 +23,19 @@ class TestRoom < MiniTest::Test
         @playlist = [@song1, @song2]
     end
 
-    def test_has_fee()
+    def test_room_has_fee()
         assert_equal(12.50, @room1.fee)
     end
 
-    def test_has_capacity()
+    def test_room_has_capacity()
         assert_equal(5, @room1.capacity)
+    end
+
+    def test_room_can_check_guest_in
+        
+    end
+
+    def test_guest_has_enough_money?()
     end
 
 end

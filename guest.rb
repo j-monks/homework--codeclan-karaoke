@@ -10,4 +10,11 @@ class Guest
         @favourite_song = favourite_song    
     end
 
+    def sufficient_funds?(room)
+        if @wallet > room.fee
+            return true
+    end
+        return
+    end
+
 end
