@@ -14,4 +14,6 @@ class Room
     def add_guest_to_room(guest)
         @people.push(guest) if guest.sufficient_funds?(@fee)
     end
+
+        
 end

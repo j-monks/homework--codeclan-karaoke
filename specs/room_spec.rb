@@ -13,8 +13,7 @@ class TestRoom < MiniTest::Test
         @song2 = Song.new("Tainted Love", "Soft Cell", "Pop")
 
         @guest1 = Guest.new("James", 30.00, @song1)
-        @guest2 = Guest.new("Kayley", 25.00, @song2)
-
+    
 
         @room1 = Room.new(12.50, 5)
 
@@ -38,6 +37,12 @@ class TestRoom < MiniTest::Test
     def test_add_guest_to_room_if_sufficient_funds
         @room1.add_guest_to_room(@guest1)
         assert_equal(1, @room1.people.length)
+    end
+
+    def test_do_not_add_guest_to_room_if_insufficient_funds
+        poor_guest = Guest.new("Kayley", 10.00, @song2)
+        @room1.add_guest_to_room(poor_guest)
+        assert_equal(0, @room1.people.length)
     end
 
     def test_room_can_check_guest_in
