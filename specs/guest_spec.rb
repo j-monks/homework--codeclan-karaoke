@@ -33,4 +33,9 @@ class TestGuest < MiniTest::Test
         assert_equal(true, @guest1.sufficient_funds?(@room1))
     end
 
+    def test_sufficient_funds_false_if_not_enough
+        poor_guest = Guest.new("Kayley", 10, @song1)
+        assert_equal(false, poor_guest.sufficient_funds?(@room1))
+    end
+
 end

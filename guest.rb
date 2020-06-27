@@ -13,8 +13,9 @@ class Guest
     def sufficient_funds?(room)
         if @wallet > room.fee
             return true
-    end
-        return
+        else
+            return false
+        end
     end
 
 end
