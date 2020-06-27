@@ -22,4 +22,8 @@ class Guest
         @wallet -= fee if sufficient_funds?(fee)
     end
 
+    def cheer()
+        return "Whoo!"
+    end
+
 end

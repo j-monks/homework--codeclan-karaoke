@@ -29,6 +29,10 @@ class TestGuest < MiniTest::Test
         assert_equal(@song1, @guest1.favourite_song)
     end
 
+    def test_guest_can_cheer()
+        assert_equal("Whoo!", @guest1.cheer)
+    end
+
     def test_sufficient_funds__true_if_enough
         assert_equal(true, @guest1.sufficient_funds?(12.50))
     end
