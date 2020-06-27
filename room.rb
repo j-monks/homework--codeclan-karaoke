@@ -2,7 +2,7 @@ require("pry")
 
 class Room
 
-    attr_reader :fee, :capacity, :people, :songs
+    attr_reader :fee, :capacity, :people, :playlist
 
     def initialize(fee, capacity)
         @fee = fee
@@ -20,6 +20,10 @@ class Room
         @people.delete(guest)
     end
 
+    def add_song_to_room(song)
+        @playlist << song
+    end
+
     def check_in_guest(guest)
         add_guest_to_room(guest) && guest.pay_room_fee(@fee) if guest.sufficient_funds?(@fee)
     end
@@ -27,5 +31,5 @@ class Room
     def check_out_guest(guest)
         remove_guest_from_room(guest)
     end
-    
+
 end

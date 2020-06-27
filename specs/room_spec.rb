@@ -38,6 +38,15 @@ class TestRoom < MiniTest::Test
         assert_equal(0, @room1.people.length)
     end
 
+    def test_room_has_playlist()
+        assert_equal(0, @room1.playlist.length)
+    end
+
+    def test_add_song_to_room()
+        @room1.add_song_to_room(@song1)
+        assert_equal(1, @room1.playlist.length)
+    end
+
     def test_remove_guest_from_room()
         @room1.add_guest_to_room(@guest1)
         @room1.remove_guest_from_room(@guest1)
