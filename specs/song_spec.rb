@@ -22,4 +22,5 @@ class TestSong < MiniTest::Test
     def test_has_genre()
         assert_equal("Pop", @song.genre)
     end
+    
 end
