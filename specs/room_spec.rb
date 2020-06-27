@@ -55,10 +55,9 @@ class TestRoom < MiniTest::Test
     end
 
     def test_room_can_check_guest_in
-        
-    end
-
-    def test_guest_has_enough_money?()
+        @room1.check_in_guest(@guest1)
+        assert_equal(17.50, @guest1.wallet)
+        assert_equal(1, @room1.people.length)
     end
 
 end
