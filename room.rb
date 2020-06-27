@@ -24,4 +24,8 @@ class Room
         add_guest_to_room(guest) && guest.pay_room_fee(@fee) if guest.sufficient_funds?(@fee)
     end
 
+    def check_out_guest(guest)
+        remove_guest_from_room(guest)
+    end
+    
 end
