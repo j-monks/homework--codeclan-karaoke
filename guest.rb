@@ -1,6 +1,6 @@
 require("pry")
 
-class Customer
+class Guest
 
     def initialize(name, wallet, favourite_song)
         @name = name
