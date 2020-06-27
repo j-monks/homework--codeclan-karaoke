@@ -19,7 +19,7 @@ class Guest
     end
 
     def pay_room_fee(room)
-        @wallet -= room.fee
+        @wallet -= room.fee if sufficient_funds?(room)
     end
 
 end
