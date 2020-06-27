@@ -11,11 +11,15 @@ class TestRoom < MiniTest::Test
     def setup()
         @song1 = Song.new("Come On Eileen", "Dexys Midnight Runners", "Alternative/Indie")
         @song2 = Song.new("Tainted Love", "Soft Cell", "Pop")
+        @song3 = Song.new("Adeline", "alt-J", "Alternative/Indie")
 
         @guest1 = Guest.new("James", 30.00, @song1)
+        @guest2 = Guest.new("Kayley", 17.00, @song2)
+        @guest3 = Guest.new("Fred", 15.00, @song3)
+        @guest4 = Guest.new("Kim", 18.00, @song1)
     
 
-        @room1 = Room.new(12.50, 5)
+        @room1 = Room.new(12.50, 3)
 
 
         # @people = [@guest1, @guest2]
@@ -27,22 +31,27 @@ class TestRoom < MiniTest::Test
     end
 
     def test_room_has_capacity()
-        assert_equal(5, @room1.capacity)
+        assert_equal(3, @room1.capacity)
     end
     
     def test_room_has_people()
         assert_equal(0, @room1.people.length)
     end
 
-    def test_add_guest_to_room_if_sufficient_funds
+    def test_add_guest_to_room_if_room_is_not_full
         @room1.add_guest_to_room(@guest1)
-        assert_equal(1, @room1.people.length)
+        @room1.add_guest_to_room(@guest2)
+        @room1.add_guest_to_room(@guest3)
+        assert_equal(3, @room1.people.length)
     end
 
-    def test_do_not_add_guest_to_room_if_insufficient_funds
-        poor_guest = Guest.new("Kayley", 10.00, @song2)
-        @room1.add_guest_to_room(poor_guest)
-        assert_equal(0, @room1.people.length)
+    def test_does_not_add_guest_to_room_if_room_is_full
+        @room1.add_guest_to_room(@guest1)
+        @room1.add_guest_to_room(@guest2)
+        @room1.add_guest_to_room(@guest3)
+        @room1.add_guest_to_room(@guest4)
+
+        assert_equal(3, @room1.people.length)
     end
 
     def test_room_can_check_guest_in

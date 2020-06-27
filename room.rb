@@ -12,8 +12,12 @@ class Room
     end
 
     def add_guest_to_room(guest)
-        @people.push(guest) if guest.sufficient_funds?(@fee)
+        return if @people.length >= @capacity
+        @people.push(guest) 
     end
 
-        
+    def check_in_guest(guest)
+        add_guest_to_room(guest) if guest.sufficient_funds?(@fee)
+    end
+
 end
