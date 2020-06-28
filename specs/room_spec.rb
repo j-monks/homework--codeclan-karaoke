@@ -19,7 +19,7 @@ class TestRoom < MiniTest::Test
         @guest4 = Guest.new("Kim", 18.00, @song1)
     
 
-        @room1 = Room.new(12.50, 3)
+        @room1 = Room.new("Room 1", 12.50, 3)
 
 
         # @people = [@guest1, @guest2]

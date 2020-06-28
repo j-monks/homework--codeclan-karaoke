@@ -10,6 +10,9 @@ class Bar
     @total_cash = 0
     end
 
+    def add_room_tab_to_bar_tabs(room)
+        room.tab
     binding.pry
+    end
 
 end
