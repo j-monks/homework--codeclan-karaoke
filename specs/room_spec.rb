@@ -87,6 +87,7 @@ class TestRoom < MiniTest::Test
         @room1.check_in_guest(@guest1)
         assert_equal(17.50, @guest1.wallet)
         assert_equal(1, @room1.people.length)
+        assert_equal({:James=>12.5}, @room1.guest_tab(@guest1))
     end
 
     def test_room_can_check_guest_out

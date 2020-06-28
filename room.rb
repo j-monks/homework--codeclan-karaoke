@@ -40,7 +40,7 @@ class Room
     end
  
     def check_in_guest(guest)
-        add_guest_to_room(guest) && guest.pay_room_fee(@fee) if guest.sufficient_funds?(@fee)
+        add_guest_to_room(guest) && guest.pay_room_fee(@fee) && update_guest_tab(guest) if guest.sufficient_funds?(@fee)
         return guest.cheer if @playlist.find { |song| song == guest.favourite_song }
     end
 
