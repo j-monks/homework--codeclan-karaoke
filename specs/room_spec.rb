@@ -34,6 +34,10 @@ class TestRoom < MiniTest::Test
         assert_equal(3, @room1.capacity)
     end
     
+    def test_room_has_tab()
+        assert_equal(0, @room1.tab.length)
+    end
+    
     def test_room_has_people()
         assert_equal(0, @room1.people.length)
     end

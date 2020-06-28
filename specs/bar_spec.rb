@@ -22,4 +22,7 @@ class TestBar < MiniTest::Test
         assert_equal(0, @bar.tabs.length)
     end
 
+    def test_bar_has_total_cash
+        assert_equal(0, @bar.total_cash)
+    end
 end

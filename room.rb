@@ -3,12 +3,14 @@ require("pry")
 class Room
 
     attr_reader :fee, :capacity, :people, :playlist
+    attr_accessor :tab
 
     def initialize(fee, capacity)
         @fee = fee
         @capacity = capacity
         @people = []
         @playlist = []
+        @tab = []
     end
 
     def add_guest_to_room(guest)
