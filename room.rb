@@ -50,6 +50,3 @@ class Room
 
 end
 
-# guest_tab_hash = {}
-# guest_name = guest.name
-# guest_tab_hash[guest_name.to_sym] = @fee
