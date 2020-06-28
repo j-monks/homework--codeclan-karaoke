@@ -20,3 +20,12 @@ Your program should be test driven and should be able to:
 - Rooms can keep track of the entry fees/spending of the guests - maybe add a bar tab/bar class?
 - Add anything extra you think would be good to have at a karaoke venue!
 
+Bar class..  has @tabs = Hash.new(0)
+
+@tabs[@room1] += @room1.guest_tabs
+
+
+room 
+@guest_tabs = Hash.new(0)
+
+guest1 => 32.00
