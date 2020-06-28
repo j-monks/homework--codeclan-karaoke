@@ -51,6 +51,17 @@ class TestRoom < MiniTest::Test
         assert_equal(1, @room1.playlist.length)
     end
 
+    def test_can_get_guest_tab()
+        @room1.update_guest_tab(@guest1)
+        @room1.update_guest_tab(@guest2)
+        assert_equal({:James=>12.5}, @room1.guest_tab(@guest1))
+    end
+
+    def test_update_guest_tab_entry_fee()
+        @room1.update_guest_tab(@guest1)
+        assert_equal({:James=>12.5}, @room1.guest_tab(@guest1))
+    end
+
     def test_remove_guest_from_room()
         @room1.add_guest_to_room(@guest1)
         @room1.remove_guest_from_room(@guest1)

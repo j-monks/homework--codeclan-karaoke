@@ -10,4 +10,6 @@ class Bar
     @total_cash = 0
     end
 
+    binding.pry
+
 end
