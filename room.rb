@@ -2,11 +2,10 @@ require("pry")
 
 class Room
 
-    attr_reader :name, :fee, :capacity, :people, :playlist
-    attr_accessor :tab
+    attr_reader :name, :fee, :capacity, :people, :playlist, :tab
 
     def initialize(name, fee, capacity)
-        @name
+        @name = name
         @fee = fee
         @capacity = capacity
         @people = []

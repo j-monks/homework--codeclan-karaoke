@@ -21,9 +21,6 @@ class TestRoom < MiniTest::Test
 
         @room1 = Room.new("Room 1", 12.50, 3)
 
-
-        # @people = [@guest1, @guest2]
-        # @playlist = [@song1, @song2]
     end
 
     def test_room_has_fee()

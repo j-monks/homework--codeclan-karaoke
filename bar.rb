@@ -2,17 +2,17 @@ require("pry")
 
 class Bar
 
-    attr_accessor :tabs, :name, :total_cash
+    attr_reader :tabs, :name, :total_cash
 
     def initialize(name)
     @name = name
-    @tabs = Hash.new(0)
-    @total_cash = 0
+    @tabs = []
     end
 
     def add_room_tab_to_bar_tabs(room)
-        room.tab
-    binding.pry
+        room_tab = room.tab
+        room_name = room.name
+        @tabs << {"#{room_name}": room_tab}
     end
 
 end

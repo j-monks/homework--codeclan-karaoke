@@ -14,7 +14,7 @@ class TestGuest < MiniTest::Test
         
         @guest1 = Guest.new("James", 30.00, @song1)
 
-        @room1 = Room.new(12.50, 5)
+        @room1 = Room.new("Room 1", 12.50, 5)
     end
 
     def test_has_name
